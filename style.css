@@ -31,6 +31,34 @@
     transform: rotate(90deg);
   }
 }
+@-webkit-keyframes handspinner_tourbilol {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2.5) rotateX(-90deg);
+    transform: scale(2.5) rotateX(-90deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-180deg);
+    transform: scale(1) rotateX(-180deg);
+  }
+}
+@keyframes handspinner_tourbilol {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2.5) rotateX(-90deg);
+    transform: scale(2.5) rotateX(-90deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-180deg);
+    transform: scale(1) rotateX(-180deg);
+  }
+}
 @keyframes menu_delai {
   from {
     opacity: 0%;
@@ -39,6 +67,11 @@
   to {
     opacity: 100%;
     transform: scale(1);
+  }
+}
+@keyframes handspinner_global {
+  100% {
+    visibility: hidden;
   }
 }
 body {
@@ -52,8 +85,38 @@ body {
   height: 100%;
   width: 100%;
   background-color: white;
+  opacity: 0.9;
   z-index: 20;
-  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: handspinner_global;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+}
+#handspinner .handspinner_barre {
+  font-size: 80px;
+  font-weight: 1000;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#handspinner_animation_1 {
+  color: #9356DC;
+  -webkit-animation: handspinner_tourbilol 1s linear 3 both;
+  animation: handspinner_tourbilol 1s linear 3 both;
+}
+
+#handspinner_animation_2 {
+  color: #FF79DA;
+  -webkit-animation: handspinner_tourbilol 1s linear 0.3s 3 both;
+  animation: handspinner_tourbilol 1s linear 0.3s 3 both;
+}
+
+#handspinner_animation_3 {
+  color: #99E2D0;
+  -webkit-animation: handspinner_tourbilol 1s linear 0.6 3 both;
+  animation: handspinner_tourbilol 1s linear 0.6s 3 both;
 }
 
 a {
@@ -167,7 +230,7 @@ header i:hover {
   text-align: center;
   margin-bottom: 40px;
   border-radius: 20px;
-  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 #fonctionnement #fonctionnement_flex .fonctionnement_box h3 {
   background-color: #9356DC;
@@ -194,9 +257,11 @@ header i:hover {
 }
 
 .fonctionnement_box:hover {
-  transform: scale(1.02);
-  transition-duration: 0.25s;
+  transform: scale(1.01);
+  transition-duration: 0.2s;
   cursor: pointer;
+  background-color: white !important;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
 #restaurants {
@@ -236,9 +301,10 @@ header i:hover {
   width: 80%;
 }
 .restaurants_flex .restaurants_box:hover {
-  transform: scale(1.02);
-  transition-duration: 0.25s;
   cursor: pointer;
+  transform: scale(1.01);
+  transition-duration: 0.2s;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .enbas_flex {
@@ -295,6 +361,9 @@ ul {
 ul li {
   margin: 0 0 10px 0;
   font-size: 18px;
+}
+ul li a {
+  color: white;
 }
 ul li i {
   margin-right: 10px;
@@ -522,6 +591,14 @@ ul li:hover {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-delay: 0.8s;
+}
+
+#animation_delai_10 {
+  animation-name: menu_delai;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
 }
 
 /*# sourceMappingURL=style.css.map */

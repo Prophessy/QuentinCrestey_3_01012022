@@ -21,7 +21,7 @@ $couleur-tertiaire: #99E2D0;
     src: local('Shrikhand Regular'), url('polices/Shrikhand-Regular.woff') format('woff');
     }
 
- @-webkit-keyframes rotate-90-cw {
+@-webkit-keyframes rotate-90-cw {
     0% {
       -webkit-transform: rotate(0);
               transform: rotate(0);
@@ -31,7 +31,7 @@ $couleur-tertiaire: #99E2D0;
               transform: rotate(90deg);
     }
   }
-  @keyframes rotate-90-cw {
+ @keyframes rotate-90-cw {
     0% {
       -webkit-transform: rotate(0);
               transform: rotate(0);
@@ -39,10 +39,40 @@ $couleur-tertiaire: #99E2D0;
     100% {
       -webkit-transform: rotate(90deg);
               transform: rotate(90deg);
+    }
+  }
+
+  @-webkit-keyframes handspinner_tourbilol {
+    0% {
+      -webkit-transform: scale(1) rotateX(0);
+              transform: scale(1) rotateX(0);
+    }
+    50% {
+      -webkit-transform: scale(2.5) rotateX(-90deg);
+              transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotateX(-180deg);
+              transform: scale(1) rotateX(-180deg);
+    }
+  }
+  @keyframes handspinner_tourbilol {
+    0% {
+      -webkit-transform: scale(1) rotateX(0);
+              transform: scale(1) rotateX(0);
+    }
+    50% {
+      -webkit-transform: scale(2.5) rotateX(-90deg);
+              transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotateX(-180deg);
+              transform: scale(1) rotateX(-180deg);
     }
   }
   
-  @keyframes menu_delai {
+  
+ @keyframes menu_delai {
     from {
         opacity: 0%;
         transform: scale(0.5);
@@ -52,6 +82,12 @@ $couleur-tertiaire: #99E2D0;
         transform: scale(1.0);
     }
   }
+
+@keyframes handspinner_global {
+    100% {
+        visibility: hidden;
+    }
+}
 
 body {
     margin: 0;
@@ -64,9 +100,38 @@ body {
     height: 100%;
     width: 100%;
     background-color: white;
+    opacity: 0.9;
     z-index: 20;
-    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: handspinner_global;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    .handspinner_barre {
+        font-size: 80px;
+        font-weight: 1000;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
 
+#handspinner_animation_1 { 
+    color: $couleur-primaire;
+    -webkit-animation: handspinner_tourbilol 1s linear 3 both;
+	animation: handspinner_tourbilol 1s linear 3 both;
+}
+
+#handspinner_animation_2 {
+    color: $couleur-secondaire;
+    -webkit-animation: handspinner_tourbilol 1s linear 0.3s 3 both;
+	animation: handspinner_tourbilol 1s linear 0.3s 3 both;
+}
+
+#handspinner_animation_3 {
+    color: $couleur-tertiaire;
+    -webkit-animation: handspinner_tourbilol 1s linear 0.6 3 both;
+	animation: handspinner_tourbilol 1s linear 0.6s 3 both;
 }
 
 a {
@@ -180,7 +245,7 @@ header i:hover {
             text-align: center;
             margin-bottom: 40px;
             border-radius: 20px;
-            box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.1);
+            box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
             h3 {
                 background-color: $couleur-primaire;
                 color: white;
@@ -209,9 +274,11 @@ header i:hover {
 }
 
 .fonctionnement_box:hover {
-    transform: scale(1.02);
-    transition-duration: 0.25s;
+    transform: scale(1.01);
+    transition-duration: 0.2s;
     cursor: pointer;
+    background-color: white !important;
+    box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.1) !important;
 }
 
 #restaurants {
@@ -250,9 +317,10 @@ header i:hover {
         }
     }
     .restaurants_box:hover {
-        transform: scale(1.02);
-        transition-duration: 0.25s;
         cursor: pointer;
+        transform: scale(1.01);
+        transition-duration: 0.2s;
+        box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.1);
     }
 }
 
@@ -313,6 +381,9 @@ ul {
     li {
         margin: 0 0 10px 0;
         font-size: 18px;
+        a {
+            color: white;
+        }
         i {
             margin-right: 10px;
         }
@@ -541,4 +612,12 @@ ul {
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-delay: 0.8s;
+}
+
+#animation_delai_10 {
+    animation-name: menu_delai;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
 }
