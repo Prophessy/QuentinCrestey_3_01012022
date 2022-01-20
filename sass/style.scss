@@ -246,6 +246,14 @@ header i:hover {
             margin-bottom: 40px;
             border-radius: 20px;
             box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+
+            &:hover {
+                transform: scale(1.01);
+                transition-duration: 0.2s;
+                cursor: pointer;
+                background-color: white;
+                box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.1);
+            }
             h3 {
                 background-color: $couleur-primaire;
                 color: white;
@@ -271,14 +279,6 @@ header i:hover {
             }
         }
     }
-}
-
-.fonctionnement_box:hover {
-    transform: scale(1.01);
-    transition-duration: 0.2s;
-    cursor: pointer;
-    background-color: white !important;
-    box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.1) !important;
 }
 
 #restaurants {
@@ -465,17 +465,27 @@ ul {
     .menu_box {
         display: flex;
         justify-content: space-between;
-        width: 80%;
+        width: 90%;
         background-color: white;
         margin-bottom: 20px;
         border-radius: 15px;
         box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+        .menu_nom {
+            overflow: hidden;
+        }
         p{
             margin-left: 20px;
+            font-size: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         h3 {
             margin-left: 20px;
             margin-bottom: -10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .prix {
             display: flex;
@@ -490,7 +500,7 @@ ul {
 
 .menu_box:hover {
     cursor: pointer;
-    #check_box {
+    .check_box {
         transition-duration: 0.5s;
         width: 80px;
         i {
@@ -504,7 +514,7 @@ ul {
     }
 }
 
-#check_box {
+.check_box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -620,4 +630,37 @@ ul {
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-delay: 1s;
+}
+
+@media screen and (min-width: 1000px) {
+    #fonctionnement{
+        width: 70%;
+        margin: auto;
+    }
+    #restaurants {
+        width: 70%;
+        height: 900px;
+        margin: auto;
+    }
+    .restaurants_flex {
+        width: 100%;
+        margin: auto;
+        .restaurants_box {
+            width: 40%;
+            margin: 20px;
+        }
+    }
+    #main_menu {
+        width: 70%;
+        margin: auto;
+        margin-top: -70px;
+        margin-bottom: 20px;
+        height: 900px;
+    }
+    #menu_flex {
+        .menu_box{
+            width: 30%;
+            margin: 10px;
+        }
+    }
 }
