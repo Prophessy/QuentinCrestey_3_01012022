@@ -218,6 +218,7 @@ header i:hover {
 
 #fonctionnement h2 {
   font-size: 35px;
+  margin-left: 20px;
 }
 #fonctionnement #fonctionnement_flex {
   display: flex;
@@ -236,8 +237,12 @@ header i:hover {
   transform: scale(1.01);
   transition-duration: 0.2s;
   cursor: pointer;
-  background-color: white;
+  background-color: #ac7be749;
   box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#fonctionnement #fonctionnement_flex .fonctionnement_box:hover i {
+  color: #9356DC;
+  opacity: 100%;
 }
 #fonctionnement #fonctionnement_flex .fonctionnement_box h3 {
   background-color: #9356DC;
@@ -253,12 +258,12 @@ header i:hover {
 }
 #fonctionnement #fonctionnement_flex .fonctionnement_box p {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 #fonctionnement #fonctionnement_flex .fonctionnement_box p i {
-  margin-right: 40px;
+  margin-right: 25px;
   opacity: 50%;
   font-size: 25px;
 }
@@ -281,12 +286,24 @@ header i:hover {
   justify-content: center;
 }
 .restaurants_flex .restaurants_box {
+  position: relative;
   width: 90%;
   height: 300px;
   background-color: white;
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.restaurants_flex .restaurants_box .nouveau {
+  position: absolute;
+  right: 10px;
+  background-color: #99E2D0;
+  width: 100px;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 0;
+  border-radius: 5px;
+  color: #22705d;
 }
 .restaurants_flex .restaurants_box .img_restaurants {
   height: 210px;
@@ -379,7 +396,7 @@ ul li:hover {
 }
 
 #main_menu {
-  height: 1550px;
+  height: 1700px;
   border-radius: 50px 50px 0 0;
   background-color: #f6f6f6;
   position: relative;
@@ -530,84 +547,47 @@ ul li:hover {
   transition-duration: 0.25s;
 }
 
-#animation_delai_1 {
+.menu_box {
   animation-name: menu_delai;
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
-  animation-delay: 0s;
 }
 
-#animation_delai_2 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.1s;
+#menu_flex div:nth-child(1) {
+  animation-delay: 0.25s;
 }
 
-#animation_delai_3 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.2s;
-}
-
-#animation_delai_4 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.3s;
-}
-
-#animation_delai_5 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.4s;
-}
-
-#animation_delai_6 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+#menu_flex div:nth-child(2) {
   animation-delay: 0.5s;
 }
 
-#animation_delai_7 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.6s;
+#menu_flex div:nth-child(3) {
+  animation-delay: 0.75s;
 }
 
-#animation_delai_8 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.7s;
-}
-
-#animation_delai_9 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.8s;
-}
-
-#animation_delai_10 {
-  animation-name: menu_delai;
-  animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+#menu_flex div:nth-child(4) {
   animation-delay: 1s;
+}
+
+#menu_flex div:nth-child(5) {
+  animation-delay: 1.25s;
+}
+
+#menu_flex div:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+#menu_flex div:nth-child(7) {
+  animation-delay: 1.75s;
+}
+
+#menu_flex div:nth-child(8) {
+  animation-delay: 2s;
+}
+
+#menu_flex div:nth-child(9) {
+  animation-delay: 2.25s;
 }
 
 @media screen and (min-width: 1000px) {

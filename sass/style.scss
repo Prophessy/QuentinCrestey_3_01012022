@@ -1,5 +1,6 @@
 $couleur-primaire: #9356DC;
 $couleur-secondaire: #FF79DA;
+$couleur-secondaire-opac: #ac7be749;
 $couleur-tertiaire: #99E2D0;
 
 @font-face {
@@ -20,6 +21,18 @@ $couleur-tertiaire: #99E2D0;
     font-weight: normal;
     src: local('Shrikhand Regular'), url('polices/Shrikhand-Regular.woff') format('woff');
     }
+
+@mixin nouveau_mix {
+    position: absolute;
+    right: 10px;
+    background-color: $couleur-tertiaire;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 0;
+    border-radius: 5px;
+    color: #22705d; 
+}
 
 @-webkit-keyframes rotate-90-cw {
     0% {
@@ -234,6 +247,7 @@ header i:hover {
 #fonctionnement {
     h2 {
         font-size: 35px;
+        margin-left: 20px;
     }
     #fonctionnement_flex {
         display: flex;
@@ -246,13 +260,16 @@ header i:hover {
             margin-bottom: 40px;
             border-radius: 20px;
             box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
-
             &:hover {
                 transform: scale(1.01);
                 transition-duration: 0.2s;
                 cursor: pointer;
-                background-color: white;
+                background-color: $couleur-secondaire-opac;
                 box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.1);
+                i {
+                    color: $couleur-primaire;
+                    opacity: 100%;
+                }
             }
             h3 {
                 background-color: $couleur-primaire;
@@ -268,11 +285,11 @@ header i:hover {
             }
             p {
                 font-weight: 600;
-                font-size: 20px;
+                font-size: 15px;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 i {
-                    margin-right: 40px;
+                    margin-right: 25px;
                     opacity: 50%;
                     font-size: 25px;
                 }
@@ -298,12 +315,16 @@ header i:hover {
     flex-wrap: wrap;
     justify-content: center;
     .restaurants_box {
+        position: relative;
         width: 90%;
         height: 300px;
         background-color: white;
         margin-bottom: 20px;
         border-radius: 15px;
         box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+        .nouveau {
+            @include nouveau_mix; 
+        }
         .img_restaurants {
             height: 210px;
             width: 100%;
@@ -401,7 +422,7 @@ ul {
 }
 
 #main_menu {
-    height: 1550px;
+    height: 1700px;
     border-radius: 50px 50px 0 0;
     background-color: #f6f6f6;
     position: relative;
@@ -552,85 +573,16 @@ ul {
         }
     }
 
-#animation_delai_1 {
+.menu_box {
     animation-name: menu_delai;
     animation-fill-mode: both;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
-    animation-delay: 0s;
 }
 
-#animation_delai_2 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.1s;
-}
-
-#animation_delai_3 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.2s;
-}
-
-#animation_delai_4 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.3s;
-}
-
-#animation_delai_5 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.4s;
-}
-
-#animation_delai_6 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.5s;
-}
-
-#animation_delai_7 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.6s;
-}
-
-#animation_delai_8 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.7s;
-}
-
-#animation_delai_9 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0.8s;
-}
-
-#animation_delai_10 {
-    animation-name: menu_delai;
-    animation-fill-mode: both;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 1s;
-}
+@for $i from 1 to 10 {
+    #menu_flex div:nth-child(#{$i}) { animation-delay: $i * 0.25s; }
+  }
 
 @media screen and (min-width: 1000px) {
     #fonctionnement{
