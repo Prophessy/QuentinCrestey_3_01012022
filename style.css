@@ -363,7 +363,7 @@ header i:hover {
   align-items: center;
   height: 250px;
   background-color: #3a3a3a;
-  margin-top: -20px;
+  margin-top: -20px !important;
   width: 100%;
   color: white;
 }
@@ -402,7 +402,6 @@ ul li:hover {
 }
 
 #main_menu {
-  height: 1700px;
   border-radius: 50px 50px 0 0;
   background-color: #f6f6f6;
   position: relative;
@@ -536,7 +535,7 @@ ul li:hover {
 .btn_commander {
   display: flex;
   justify-content: center;
-  margin-bottom: 70px;
+  padding-bottom: 80px;
   margin-top: 40px;
 }
 .btn_commander button {
@@ -624,7 +623,6 @@ ul li:hover {
     margin: auto;
     margin-top: -70px;
     margin-bottom: 20px;
-    height: 900px;
   }
 
   .menu_flex .menu_box {
