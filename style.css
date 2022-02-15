@@ -631,6 +631,25 @@ ul li:hover {
     width: 30%;
     margin: 10px;
   }
+
+  #footer {
+    text-align: center;
+    margin: 0;
+  }
+  #footer .footer_flex {
+    margin: auto;
+    width: 1000px;
+  }
+  #footer h2 {
+    margin-left: 0px !important;
+  }
+
+  .footer_flex ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    justify-content: space-around;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
